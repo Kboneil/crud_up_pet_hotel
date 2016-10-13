@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD UP Pet Hotel</title>
+    <script src='/vendor/jquery.min.js'></script>
+    <script src='/scripts/client.js'></script>
+    <link rel='stylesheet' href='styles/styles.css'  />
+  </head>
+  <body>
+    <h1>Owners and Pets</h1>
+
+    <section>
+      <h2>Owner Registration</h2>
+      <form class='ownerRegistration'>
+        <label for='first_name'>First Name:</label>
+        <input type='text' id='first_name' name='first_name'/>
+
+        <label for='last_name'>Last Name:</label>
+        <input type='text' id='last_name' name='last_name'/>
+        <button type='submit' name='submit'>Register</button>
+      </form>
+
+    </section>
+
+    <section>
+      <h2>Pet Registration</h2>
+      <form class='petRegistration'>
+        <label for='owner_id'>Owner Name:</label>
+        <input list='owners' name='owner_id' />
+        <datalist id = 'owners'>
+          <option value='spongebob'></option>
+        </datalist>
+
+        <label for='pet_name'>Pet Name:</label>
+        <input type='text' id='pet_name' name='pet_name'/>
+
+        <label for='breed'>Breed:</label>
+        <input type='text' id='breed' name='breed'/>
+
+        <label for='color'>Color:</label>
+        <input type='text' id='color' name='color'/>
+
+        <button type='submit' name='submit'>Add Pet</button>
+      </form>
+
+    </section>
+
+    <section>
+      <table>
+        <tr>
+          <th>Owner</th>
+          <th>Pet</th>
+          <th>Breed</th>
+          <th>Color</th>
+          <th>Update</th>
+          <th>Delete</th>
+          <th>Check In/Out</th>
+        </tr>
+      </table>
+    </section>
+
+
+
+  </body>
+</html>
