@@ -7,6 +7,29 @@ var config = {
 
 var pool = new pg.Pool(config);
 
+router.get('/', function (req, res) {
+  pool.connect(function (err, client, done) {
+    try {
+      if (err) {
+        res.sendStatus(500);
+        return;
+      }
+
+      client.query('SELECT * FROM pets ORDER BY id;',
+            function (err, result) {
+              if (err) {
+                res.sendStatus(500);
+                return;
+              }
+
+              res.send(result.rows);
+            });
+    } finally {
+      done();
+    }
+  });
+});
+
 router.post('/', function (req, res) {
   pool.connect(function (err, client, done) {
     console.log('req: ', req.body);
