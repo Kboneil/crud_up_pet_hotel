@@ -26,9 +26,7 @@
       <h2>Pet Registration</h2>
       <form class='petRegistration'>
         <label for='owner_id'>Owner Name:</label>
-        <input list='owners' id='owner_id' name='owner_id' />
-        <datalist id = 'owners'>
-        </datalist>
+        <select id = 'owners'></select>
 
         <label for='pet_name'>Pet Name:</label>
         <input type='text' id='pet_name' name='pet_name'/>
@@ -45,7 +43,8 @@
     </section>
 
     <section>
-      <table>
+      <table class="pet-list">
+        <thead>
         <tr>
           <th>Owner</th>
           <th>Pet</th>
@@ -55,6 +54,9 @@
           <th>Delete</th>
           <th>Check In/Out</th>
         </tr>
+        </thead>
+        <tbody class="appendedPets">
+        </tbody>
       </table>
     </section>
 
